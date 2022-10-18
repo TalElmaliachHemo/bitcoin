@@ -1,16 +1,26 @@
 .contact-preview {
     display: flex;
-    flex-direction: column;
-    text-decoration: none;
+    align-items: center;
     margin-block-end: rem(5px);
     cursor: pointer;
 
-    .contact-name {
-        font-size: rem(16px);
+    img {
+        height: rem(50px);
+        width: rem(50px);
+        margin-inline-end: rem(5px);
     }
 
-    .contact-email,
-    .contact-phone {
-        font-size: rem(12px);
+    .contact-data {
+        display: flex;
+        flex-direction: column;
+
+        .contact-name {
+            font-size: rem(16px);
+        }
+    
+        .contact-email,
+        .contact-phone {
+            font-size: rem(12px);
+        }
     }
 }

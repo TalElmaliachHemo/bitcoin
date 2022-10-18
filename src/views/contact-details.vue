@@ -1,9 +1,9 @@
 <template>
   <section v-if="contact" class="contact-details">
     <img :src="imgURL" alt="contact-img">
-    <span>{{ contact.name }}</span>
-    <span>Email: {{ contact.email }}</span>
-    <span>Phone: {{ contact.phone }}</span>
+    <span class="contact-name">{{ contact.name }}</span>
+    <span class="contact-email">Email: {{ contact.email }}</span>
+    <span class="contact-phone">Phone: {{ contact.phone }}</span>
     <button class="btn-back">
       <RouterLink to="/contact">Back</RouterLink>
     </button>

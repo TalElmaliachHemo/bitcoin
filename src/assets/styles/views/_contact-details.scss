@@ -9,8 +9,12 @@
     }
 
     img {
-        height: 200px;
-        width: 200px;
+        height: rem(200px);
+        width: rem(200px);
+    }
+
+    .contact-name {
+        font-size: rem(20px);
     }
 
     .btn-back {
