@@ -1,0 +1,18 @@
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: rem(15px);
+
+    .logo {
+        font-size: rem(23px);
+    }
+
+    .nav-app {
+        font-size: rem(15px);
+
+        >*:not(:last-child) {
+            margin-inline-end: rem(10px);
+        }
+    }
+}
