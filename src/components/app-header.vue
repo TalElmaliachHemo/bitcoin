@@ -3,8 +3,8 @@
     <span class="logo">Mr. BitCoin</span>
     <nav class="nav-app">
       <RouterLink to="/">Home</RouterLink>
-      <RouterLink to="/contacts">Contacts</RouterLink>
-      <RouterLink to="/statistics">Statistics</RouterLink>
+      <RouterLink to="/contact">Contacts</RouterLink>
+      <RouterLink to="/statistic">Statistics</RouterLink>
     </nav>
   </header>
 </template>

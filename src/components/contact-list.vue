@@ -3,7 +3,9 @@
     <ul class="clean-list">
       <TransitionGroup name="list">
         <li v-for="contact in contacts" :key="contact._id">
-          <ContactPreview :contact="contact" />
+          <RouterLink :to="`/contact/${contact._id}`">
+            <ContactPreview :contact="contact" />
+          </RouterLink>
           <button class="btn-remove" @click="onRemoveContact(contact._id)">
             x
           </button>

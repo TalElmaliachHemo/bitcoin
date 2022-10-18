@@ -1,5 +1,5 @@
 <template>
-  <section class="contacts main-layout">
+  <section class="contact-app main-layout">
     <ContactFilter @filter="onFilter" />
     <ContactList
       @contact-removed="onRemoveContact"

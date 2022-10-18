@@ -3,7 +3,7 @@
     <input
       @input="onFilter"
       v-model="filterBy.name"
-      placeholder="Search"
+      placeholder="Search by name"
       type="text"
     />
   </section>

@@ -1,6 +1,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Home from '../views/home.vue'
 import ContactApp from '../views/contact-app.vue'
+import ContactDetails from '../views/contact-details.vue'
 import StatisticsApp from '../views/statistics-app.vue'
 
 const router = createRouter({
@@ -12,13 +13,18 @@ const router = createRouter({
       component: Home
     },
     {
-      path: '/contacts',
-      name: 'contacts',
+      path: '/contact',
+      name: 'contact',
       component: ContactApp
     },
     {
-      path: '/statistics',
-      name: 'statistics',
+      path: '/contact/:id',
+      name: 'contacts-details',
+      component: ContactDetails
+    },
+    {
+      path: '/statistic',
+      name: 'statistic',
       component: StatisticsApp
     },
   ]
