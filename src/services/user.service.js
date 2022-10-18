@@ -1,4 +1,4 @@
-export const contactService = {
+export const userService = {
     getUser
 }
 

@@ -1,8 +1,10 @@
+import { utilService } from './util.service.js'
+
 export const contactService = {
-    getContacts,
-    getContactById,
-    deleteContact,
-    saveContact,
+    query,
+    getById,
+    remove,
+    save,
     getEmptyContact
 }
 
@@ -137,7 +139,7 @@ function sort(arr) {
     })
 }
 
-function getContacts(filterBy = null) {
+function query(filterBy = null) {
     return new Promise((resolve, reject) => {
         var contactsToReturn = contacts;
         if (filterBy && filterBy.term) {
@@ -147,16 +149,16 @@ function getContacts(filterBy = null) {
     })
 }
 
-function getContactById(id) {
+function getById(contactId) {
     return new Promise((resolve, reject) => {
-        const contact = contacts.find(contact => contact._id === id)
-        contact ? resolve(contact) : reject(`Contact id ${id} not found!`)
+        const contact = contacts.find(contact => contact._id === contactId)
+        contact ? resolve(contact) : reject(`Contact id ${contactId} not found!`)
     })
 }
 
-function deleteContact(id) {
+function remove(contactId) {
     return new Promise((resolve, reject) => {
-        const index = contacts.findIndex(contact => contact._id === id)
+        const index = contacts.findIndex(contact => contact._id === contactId)
         if (index !== -1) {
             contacts.splice(index, 1)
         }
@@ -165,7 +167,11 @@ function deleteContact(id) {
     })
 }
 
-function _updateContact(contact) {
+function save(contact) {
+    return contact._id ? _update(contact) : _add(contact)
+}
+
+function _update(contact) {
     return new Promise((resolve, reject) => {
         const index = contacts.findIndex(c => contact._id === c._id)
         if (index !== -1) {
@@ -175,16 +181,12 @@ function _updateContact(contact) {
     })
 }
 
-function _addContact(contact) {
+function _add(contact) {
     return new Promise((resolve, reject) => {
-        contact._id = _makeId()
+        contact._id = utilService.makeId()
         contacts.push(contact)
         resolve(contact)
     })
-}
-
-function saveContact(contact) {
-    return contact._id ? _updateContact(contact) : _addContact(contact)
 }
 
 function getEmptyContact() {
@@ -202,15 +204,4 @@ function filter(term) {
             contact.phone.toLocaleLowerCase().includes(term) ||
             contact.email.toLocaleLowerCase().includes(term)
     })
-}
-
-
-
-function _makeId(length = 10) {
-    var txt = ''
-    var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-    for (var i = 0; i < length; i++) {
-        txt += possible.charAt(Math.floor(Math.random() * possible.length))
-    }
-    return txt
 }
