@@ -126,18 +126,17 @@ const contacts = [
     }
 ];
 
-function sort(arr) {
-    return arr.sort((a, b) => {
-        if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
-            return -1;
-        }
-        if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
-            return 1;
-        }
-
-        return 0;
-    })
-}
+// function sort(arr) {
+//     return arr.sort((a, b) => {
+//         if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
+//             return -1;
+//         }
+//         if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
+//             return 1;
+//         }
+//         return 0;
+//     })
+// }
 
 function query(filterBy = null) {
     return new Promise((resolve, reject) => {
@@ -145,7 +144,8 @@ function query(filterBy = null) {
         if (filterBy && filterBy.term) {
             contactsToReturn = filter(filterBy.term)
         }
-        resolve(sort(contactsToReturn))
+        // resolve(sort(contactsToReturn))
+        resolve(contactsToReturn)
     })
 }
 

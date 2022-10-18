@@ -3,7 +3,7 @@
     <h1 class="title">Hello {{ user.name }}, Welcome !</h1>
     <main class="data">
       <div class="balance">
-        <span class="btc">{{ user.name }}'s balance: {{ user.balance }}</span>
+        <span class="btc">{{ user.name }}'s balance: ₿{{ user.balance }}</span>
         <span class="usd">USD: ${{ BTCtoUSD }}</span>
         <span class="eur">EUR: €{{ BTCtoEUR }}</span>
       </div>

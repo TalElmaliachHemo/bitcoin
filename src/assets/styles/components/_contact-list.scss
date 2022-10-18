@@ -1,0 +1,14 @@
+.contact-list {
+    display: flex;
+    justify-content: flex-end;
+
+    ul {
+        li {
+            border-block-end: 1px solid white;
+        }
+
+        >*:not(:last-child) {
+            margin-block-end: rem(10px);
+        }
+    }
+}
