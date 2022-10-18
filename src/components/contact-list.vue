@@ -1,9 +1,14 @@
 <template>
   <section class="contact-list">
     <ul class="clean-list">
-      <li v-for="contact in contacts" :key="contact._id">
-        <ContactPreview :contact="contact" />
-      </li>
+      <TransitionGroup name="list">
+        <li v-for="contact in contacts" :key="contact._id">
+          <ContactPreview :contact="contact" />
+          <button class="btn-remove" @click="onRemoveContact(contact._id)">
+            x
+          </button>
+        </li>
+      </TransitionGroup>
     </ul>
   </section>
 </template>
@@ -15,6 +20,11 @@ export default {
     contacts: {
       type: Array,
       required: true,
+    },
+  },
+  methods: {
+    onRemoveContact(contactId) {
+      this.$emit("contact-removed", contactId);
     },
   },
   components: {

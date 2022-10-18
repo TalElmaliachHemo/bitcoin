@@ -5,10 +5,37 @@
     ul {
         li {
             border-block-end: 1px solid white;
+            position: relative;
+
+            .btn-remove {
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: transparent;
+                border: 0;
+                color: var(--primary-text-color);
+                cursor: pointer;
+            }
         }
 
         >*:not(:last-child) {
             margin-block-end: rem(10px);
+        }
+
+        //TransitionGroup
+        .list-move,
+        .list-enter-active,
+        .list-leave-active {
+            transition: all 0.5s ease;
+        }
+
+        .list-enter-from,
+        .list-leave-to {
+            opacity: 0;
+        }
+
+        .list-leave-active {
+            position: absolute;
         }
     }
 }

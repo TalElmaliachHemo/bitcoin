@@ -162,7 +162,6 @@ function remove(contactId) {
         if (index !== -1) {
             contacts.splice(index, 1)
         }
-
         resolve(contacts)
     })
 }
