@@ -1,9 +1,9 @@
 <template>
   <section class="contact-filter">
-    <input
+    <input class="filterBy-input"
       @input="onFilter"
       v-model="filterBy.name"
-      placeholder="Search by name"
+      placeholder="search by name"
       type="text"
     />
   </section>

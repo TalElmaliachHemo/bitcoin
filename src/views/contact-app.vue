@@ -1,6 +1,9 @@
 <template>
   <section class="contact-app main-layout">
-    <ContactFilter @filter="onFilter" />
+    <div class="contact-actions">
+      <ContactFilter @filter="onFilter" />
+      <AddContact />
+    </div>
     <ContactList
       @contact-removed="onRemoveContact"
       :contacts="contactsToShow"
@@ -12,6 +15,7 @@
 import { contactService } from "../services/contact.service.js";
 import ContactList from "../components/contact-list.vue";
 import ContactFilter from "../components/contact-filter.vue";
+import AddContact from "../components/add-contact.vue";
 export default {
   data() {
     return {
@@ -44,6 +48,7 @@ export default {
   components: {
     ContactList,
     ContactFilter,
+    AddContact,
   },
 };
 </script>

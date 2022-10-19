@@ -3,21 +3,29 @@
     align-items: center;
     margin-block-end: rem(5px);
     cursor: pointer;
+    width: rem(350px);
 
     img {
         height: rem(50px);
         width: rem(50px);
-        margin-inline-end: rem(5px);
+        margin-inline-end: rem(10px);
     }
 
     .contact-data {
         display: flex;
         flex-direction: column;
 
+        input {
+            background-color: transparent;
+            color: var(--primary-text-color);
+            border: 0;
+            margin-block-end: rem(5px);
+        }
+
         .contact-name {
             font-size: rem(16px);
         }
-    
+
         .contact-email,
         .contact-phone {
             font-size: rem(12px);

@@ -2,14 +2,15 @@
 
     // COLORS
     --primary-text-color: white;
+    --secondary-text-color: lightblue;
     --primary-bgc: rgb(20, 20, 61);
 
     // FONTS
-    --primary-font-family: 'roboto'
+    --primary-font-family: roboto;
 }
 
 // LAYOUT
-$layoutPadding: 20px;
+$layoutPadding: 30px;
 
 // LAYOUT BREAKPOINTS
 $break-narrow: 530px;

@@ -1,4 +1,10 @@
 .contact-app {
     display: flex;
     justify-content: space-between;
+
+    .contact-actions {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
 }

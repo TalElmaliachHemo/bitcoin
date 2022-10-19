@@ -126,25 +126,11 @@ const contacts = [
     }
 ];
 
-// function sort(arr) {
-//     return arr.sort((a, b) => {
-//         if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) {
-//             return -1;
-//         }
-//         if (a.name.toLocaleLowerCase() > b.name.toLocaleLowerCase()) {
-//             return 1;
-//         }
-//         return 0;
-//     })
-// }
-
-function query(filterBy = null) {
+function query() {
     return new Promise((resolve, reject) => {
-        var contactsToReturn = contacts;
-        if (filterBy && filterBy.term) {
-            contactsToReturn = filter(filterBy.term)
-        }
-        // resolve(sort(contactsToReturn))
+        console.log(contacts)
+        const contactsToReturn = [...contacts];
+        console.log(contactsToReturn)
         resolve(contactsToReturn)
     })
 }
@@ -174,7 +160,7 @@ function _update(contact) {
     return new Promise((resolve, reject) => {
         const index = contacts.findIndex(c => contact._id === c._id)
         if (index !== -1) {
-            contacts[index] = contact
+            contacts.splice(index, 1, contact)
         }
         resolve(contact)
     })
@@ -194,13 +180,4 @@ function getEmptyContact() {
         email: '',
         phone: ''
     }
-}
-
-function filter(term) {
-    term = term.toLocaleLowerCase()
-    return contacts.filter(contact => {
-        return contact.name.toLocaleLowerCase().includes(term) ||
-            contact.phone.toLocaleLowerCase().includes(term) ||
-            contact.email.toLocaleLowerCase().includes(term)
-    })
 }
