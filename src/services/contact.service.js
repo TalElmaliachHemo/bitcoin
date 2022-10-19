@@ -128,9 +128,7 @@ const contacts = [
 
 function query() {
     return new Promise((resolve, reject) => {
-        console.log(contacts)
         const contactsToReturn = [...contacts];
-        console.log(contactsToReturn)
         resolve(contactsToReturn)
     })
 }
@@ -169,13 +167,14 @@ function _update(contact) {
 function _add(contact) {
     return new Promise((resolve, reject) => {
         contact._id = utilService.makeId()
-        contacts.push(contact)
+        contacts.unshift(contact)
         resolve(contact)
     })
 }
 
 function getEmptyContact() {
     return {
+        _id: utilService.makeId(),
         name: '',
         email: '',
         phone: ''

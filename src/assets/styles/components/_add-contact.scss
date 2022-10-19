@@ -6,6 +6,8 @@
         width: rem(400px);
 
         &:not(:last-child) {
+            padding: rem(3px);
+            border-radius: rem(4px);
             margin-block-end: rem(20px);
         }
     }

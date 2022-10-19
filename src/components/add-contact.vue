@@ -1,6 +1,6 @@
 <template>
   <section class="add-contact">
-    <h1>Add new contact</h1>
+    <h1>Add a new contact</h1>
     <input
       class="contact-name"
       v-model="contact.name"
@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     onAddContact() {
-      console.log(this.contact);
+      this.$store.dispatch({ type: "saveContact", contact: this.contact });
     },
   },
 };

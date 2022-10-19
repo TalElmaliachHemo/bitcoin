@@ -4,22 +4,22 @@
     <div class="contact-data">
       <input
         class="contact-name"
-        @click.prevent="onSubmitContact"
-        v-on:input.prevent="onSubmitContact"
+        @click.prevent
+        @blur="onSubmitContact"
         v-model="newContact.name"
         type="text"
       />
       <input
         class="contact-email"
-        @click.prevent="onSubmitContact"
-        v-on:input.prevent="onSubmitContact"
+        @click.prevent
+        @blur="onSubmitContact"
         v-model="newContact.email"
         type="email"
       />
       <input
         class="contact-phone"
-        @click.prevent="onSubmitContact"
-        v-on:input.prevent="onSubmitContact"
+        @click.prevent
+        @blur="onSubmitContact"
         v-model="newContact.phone"
         type="text"
       />
@@ -28,7 +28,6 @@
 </template>
 
 <script>
-import { contactService } from "../services/contact.service";
 export default {
   props: {
     contact: {
@@ -38,13 +37,15 @@ export default {
   },
   data() {
     return {
-      newContact: {...this.contact}
+      newContact: null,
     };
   },
+  created() {
+    this.newContact = JSON.parse(JSON.stringify(this.contact));
+  },
   methods: {
-    async onSubmitContact() {
-      console.log(this.newContact)
-      await contactService.save(this.newContact)
+    onSubmitContact() {
+      this.$store.dispatch({ type: "saveContact", contact: this.newContact });
     },
   },
   computed: {
