@@ -7,11 +7,13 @@
         <span class="usd">USD: ${{ BTCtoUSD }}</span>
         <span class="eur">EUR: €{{ BTCtoEUR }}</span>
       </div>
+      <TransactionApp />
     </main>
   </section>
 </template>
 
 <script>
+import TransactionApp from '../components/transaction-app.vue'
 import { bitcoinService } from "../services/bitcoin.service.js";
 export default {
   data() {
@@ -38,5 +40,8 @@ export default {
       return this.user.balance * this.rate.eur;
     },
   },
+  components: {
+    TransactionApp
+  }
 };
 </script>

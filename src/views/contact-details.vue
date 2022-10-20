@@ -4,6 +4,7 @@
     <span class="contact-name">{{ contact.name }}</span>
     <span class="contact-email">Email: {{ contact.email }}</span>
     <span class="contact-phone">Phone: {{ contact.phone }}</span>
+    <TransactionApp />
     <button class="btn-back">
       <RouterLink to="/contact">Back</RouterLink>
     </button>
@@ -12,6 +13,7 @@
 
 <script>
 import { contactService } from "../services/contact.service.js";
+import TransactionApp from '../components/transaction-app.vue'
 export default {
   data() {
     return {
@@ -26,6 +28,9 @@ export default {
     imgURL() {
         return `https://robohash.org/${this.contact.name}/?set=set5`
     }
+  },
+  components: {
+    TransactionApp
   }
 };
 </script>

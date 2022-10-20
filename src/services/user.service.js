@@ -34,7 +34,14 @@ function loginSignup(username) {
         _id: utilService.makeId(),
         name: username,
         balance: 100,
-        transactions: []
+        transactions: [
+            {
+                id: utilService.makeId(),
+                toId: "7Qhlcosi6k",
+                to: "Roni Cohen",
+                at: Date.now(),
+                amount: 10
+            }]
     }
 
     users.push(user)
