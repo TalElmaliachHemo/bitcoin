@@ -37,11 +37,8 @@ export default {
   },
   data() {
     return {
-      newContact: null,
+      newContact: {...this.contact},
     };
-  },
-  created() {
-    this.newContact = JSON.parse(JSON.stringify(this.contact));
   },
   methods: {
     onSubmitContact() {

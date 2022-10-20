@@ -136,7 +136,7 @@ function query() {
 function getById(contactId) {
     return new Promise((resolve, reject) => {
         const contact = contacts.find(contact => contact._id === contactId)
-        contact ? resolve(contact) : reject(`Contact id ${contactId} not found!`)
+        contact ? resolve({...contact}) : reject(`Contact id ${contactId} not found!`)
     })
 }
 
