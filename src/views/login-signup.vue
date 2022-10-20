@@ -1,0 +1,30 @@
+<template>
+  <section class="login-signup">
+    <h1 class="title">SignUp</h1>
+    <form class="login-signup-form" @submit.prevent="loginSignup">
+      <input
+        class="username"
+        v-model="username"
+        placeholder="fullname"
+        type="text"
+      />
+      <button class="btn-signup" @click="loginSignup">SignUp</button>
+    </form>
+  </section>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      username: "",
+    };
+  },
+  methods: {
+    loginSignup() {
+      this.$store.dispatch({ type: "signupUser", username: this.username });
+      this.$router.push('/')
+    },
+  },
+};
+</script>

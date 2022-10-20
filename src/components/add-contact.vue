@@ -1,25 +1,27 @@
 <template>
   <section class="add-contact">
-    <h1>Add a new contact</h1>
-    <input
-      class="contact-name"
-      v-model="contact.name"
-      placeholder="contact fullname"
-      type="text"
-    />
-    <input
-      class="contact-email"
-      v-model="contact.email"
-      placeholder="contact email"
-      type="email"
-    />
-    <input
-      class="contact-phone"
-      v-model="contact.phone"
-      placeholder="contact phone"
-      type="text"
-    />
-    <button class="btn-add" @click="onAddContact">Add</button>
+    <h1 class="title">Add a new contact</h1>
+    <form class="add-contact-form" @submit.prevent="onAddContact">
+      <input
+        class="contact-name"
+        v-model="contact.name"
+        placeholder="contact fullname"
+        type="text"
+      />
+      <input
+        class="contact-email"
+        v-model="contact.email"
+        placeholder="contact email"
+        type="email"
+      />
+      <input
+        class="contact-phone"
+        v-model="contact.phone"
+        placeholder="contact phone"
+        type="text"
+      />
+      <button class="btn-add" @click="onAddContact">Add</button>
+    </form>
   </section>
 </template>
 

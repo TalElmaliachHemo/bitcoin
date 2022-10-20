@@ -2,13 +2,22 @@
     display: flex;
     flex-direction: column;
 
-    >* {
-        width: rem(400px);
+    .title {
+        margin-block-end: rem(30px);
+    }
 
-        &:not(:last-child) {
-            padding: rem(3px);
-            border-radius: rem(4px);
-            margin-block-end: rem(20px);
+    .add-contact-form {
+        display: flex;
+        flex-direction: column;
+
+        >* {
+            width: rem(400px);
+
+            &:not(:last-child) {
+                padding: rem(3px);
+                border-radius: rem(4px);
+                margin-block-end: rem(20px);
+            }
         }
     }
 }
