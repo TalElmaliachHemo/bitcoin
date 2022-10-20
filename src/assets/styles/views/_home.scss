@@ -3,19 +3,33 @@
     flex-direction: column;
     align-items: center;
 
-    .title {
-        font-size: rem(25px);
+    .primary-title {
+        font-size: rem(27px);
+        margin-block-end: rem(20px);
+    }
+
+    .secondary-title {
+        font-size: rem(20px);
         margin-block-end: rem(30px);
+
+        span {
+            font-size: rem(23px);
+            color: var(--secondary-text-color)
+        }
     }
 
     .data {
+        display: flex;
+        justify-content: space-between;
         box-shadow: 0 0 6px 0;
-        padding: rem(10px);
+        padding: rem(15px);
         border-radius: rem(10px);
+        width: 100%;
 
         .balance {
             display: flex;
             flex-direction: column;
+            margin-block-end: rem(50px);
 
             .btc {
                 font-size: rem(18px);

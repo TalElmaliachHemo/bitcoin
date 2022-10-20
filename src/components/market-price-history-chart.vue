@@ -7,7 +7,7 @@
     :plugins="plugins"
     :css-classes="cssClasses"
     :styles="styles"
-    :width="800"
+    :width="500"
     :height="400"
   />
 </template>

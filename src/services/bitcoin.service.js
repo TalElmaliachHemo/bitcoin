@@ -25,7 +25,7 @@ async function getMarketPriceHistory() {
     if (storageService.load('market-price-history'))
         priceHistory = storageService.load('market-price-history')
     else {
-        const apiStr = 'https://api.blockchain.info/charts/market-price?timespan=5months&format=json&cors=true'
+        const apiStr = 'https://api.blockchain.info/charts/market-price?timespan=1months&format=json&cors=true'
         priceHistory = await (await axios.get(apiStr)).data
         console.log(priceHistory)
         priceHistory = _cleanPriceHistoryData(priceHistory)
