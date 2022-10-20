@@ -10,7 +10,7 @@
 
     .secondary-title {
         font-size: rem(20px);
-        margin-block-end: rem(30px);
+        margin-block-end: rem(40px);
 
         span {
             font-size: rem(23px);
@@ -35,8 +35,19 @@
                 font-size: rem(18px);
             }
 
+            >* {
+                span {
+                    color: var(--secondary-text-color);
+                    margin-inline-start: rem(3px);
+                }
+            }
+
             >*:not(:first-child) {
                 font-size: rem(14px);
+            }
+
+            >*:not(:last-child) {
+                margin-block-end: rem(5px);
             }
         }
     }

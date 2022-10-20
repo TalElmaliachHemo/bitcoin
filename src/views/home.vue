@@ -1,8 +1,6 @@
 <template>
   <section class="home main-layout" v-if="user">
-    <h1 class="primary-title">
-      Hello {{ user.name }}, {{getGreeting}} !
-    </h1>
+    <h1 class="primary-title">Hello {{ user.name }}, {{ getGreeting }} !</h1>
     <h4 class="secondary-title">
       Start to
       <span>Send and Exchange </span>
@@ -12,10 +10,17 @@
       <div class="flex column">
         <div class="balance">
           <span class="btc"
-            >{{ user.name }}'s balance: ₿{{ user.balance }}</span
-          >
-          <span class="usd">USD: ${{ BTCtoUSD }}</span>
-          <span class="eur">EUR: €{{ BTCtoEUR }}</span>
+            >{{ user.name }}'s balance:
+            <span> ₿{{ user.balance }} </span>
+          </span>
+          <span class="usd"
+            >USD:
+            <span> ${{ BTCtoUSD }}</span>
+          </span>
+          <span class="eur"
+            >EUR:
+            <span> €{{ BTCtoEUR }}</span>
+          </span>
         </div>
         <TransactionList
           v-if="getTransactions"

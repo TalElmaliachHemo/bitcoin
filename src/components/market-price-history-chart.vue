@@ -7,8 +7,8 @@
     :plugins="plugins"
     :css-classes="cssClasses"
     :styles="styles"
-    :width="500"
-    :height="400"
+    :width="480"
+    :height="320"
   />
 </template>
 
@@ -93,9 +93,9 @@ export default {
         datasets: [
           {
             data: this.data,
-            backgroundColor: ["#ffffff"],
+            backgroundColor: ["lightblue"],
             label: this.description,
-            borderColor: "#ffffff",
+            borderColor: "lightblue",
           },
         ],
       },

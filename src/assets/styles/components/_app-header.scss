@@ -5,8 +5,22 @@
     padding: rem(25px) 0;
     margin-block-end: rem(30px);
 
+    @keyframes logo {
+        from {
+            color: var(--primary-text-color);
+        }
+    
+        to {
+            color: var(--secondary-text-color);
+        }
+    }
+
     .logo {
         font-size: rem(23px);
+        animation-name: logo;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
 
     .nav-app {
