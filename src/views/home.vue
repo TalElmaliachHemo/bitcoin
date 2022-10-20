@@ -9,6 +9,8 @@
       </div>
       <TransactionList v-if="getTransactions" :transactions="getTransactions" />
     </main>
+    <div>
+    </div>
   </section>
 </template>
 

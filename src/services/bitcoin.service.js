@@ -20,8 +20,18 @@ async function getRate() {
     return rate
 }
 
-function getMarketPriceHistory() {
-
+async function getMarketPriceHistory() {
+    let priceHistory
+    if (storageService.load('market-price-history'))
+        priceHistory = storageService.load('market-price-history')
+    else {
+        const apiStr = 'https://api.blockchain.info/charts/market-price?timespan=5months&format=json&cors=true'
+        priceHistory = await (await axios.get(apiStr)).data
+        console.log(priceHistory)
+        priceHistory = _cleanPriceHistoryData(priceHistory)
+        storageService.save('market-price-history', priceHistory)
+    }
+    return priceHistory
 }
 
 function getAvgBlockSize() {
@@ -29,9 +39,27 @@ function getAvgBlockSize() {
 }
 
 function _cleanRateData(rate) {
-    const rateByCurrency = {
+    return {
         usd: rate.USD.last,
         eur: rate.EUR.last
     }
-    return rateByCurrency
+}
+
+function _cleanPriceHistoryData(priceHistory) {
+    const cleanPriceHistory = {
+        name: priceHistory.name,
+        unit: priceHistory.unit,
+        description: priceHistory.description,
+    }
+
+    const cleanValues = priceHistory.values.map(value => {
+        return {
+            x: value.x * 1000,
+            y: value.y
+        }
+    })
+
+    cleanPriceHistory.values = [...cleanValues]
+
+    return cleanPriceHistory
 }
