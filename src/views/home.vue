@@ -41,6 +41,7 @@ export default {
     },
     getTransactions() {
       const transactions = this.user.transactions;
+      if(!transactions) return
       if (transactions.length > 3)
         return transactions.slice(transactions.length - 3);
       else return transactions;
