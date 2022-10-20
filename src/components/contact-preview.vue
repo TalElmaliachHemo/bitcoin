@@ -1,6 +1,6 @@
 <template>
   <section class="contact-preview">
-    <img :src="imgURL" alt="contact-img" />
+    <img :src="newContact.img" alt="contact-img" />
     <div class="contact-data">
       <input
         class="contact-name"
@@ -43,11 +43,6 @@ export default {
   methods: {
     onSubmitContact() {
       this.$store.dispatch({ type: "saveContact", contact: this.newContact });
-    },
-  },
-  computed: {
-    imgURL() {
-      return `https://robohash.org/${this.contact.name}/?set=set5`;
     },
   },
 };

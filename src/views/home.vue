@@ -7,13 +7,13 @@
         <span class="usd">USD: ${{ BTCtoUSD }}</span>
         <span class="eur">EUR: €{{ BTCtoEUR }}</span>
       </div>
-      <TransactionApp />
+      <TransactionList v-if="getTransactions" :transactions="getTransactions" />
     </main>
   </section>
 </template>
 
 <script>
-import TransactionApp from '../components/transaction-app.vue'
+import TransactionList from "../components/transaction-list.vue";
 import { bitcoinService } from "../services/bitcoin.service.js";
 export default {
   data() {
@@ -23,7 +23,7 @@ export default {
   },
   async created() {
     if (!this.user) {
-      console.log("user")
+      console.log("user");
       this.$router.push("/login-signup");
     }
     this.rate = await bitcoinService.getRate();
@@ -39,9 +39,15 @@ export default {
     BTCtoEUR() {
       return this.user.balance * this.rate.eur;
     },
+    getTransactions() {
+      const transactions = this.user.transactions;
+      if (transactions.length > 3)
+        return transactions.slice(transactions.length - 3);
+      else return transactions;
+    },
   },
   components: {
-    TransactionApp
-  }
+    TransactionList,
+  },
 };
 </script>

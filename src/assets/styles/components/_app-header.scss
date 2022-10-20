@@ -20,5 +20,16 @@
             color: var(--secondary-text-color);
             font-size: rem(17px);
         }
+
+        .btn-logout {
+            background-color: transparent;
+            color: var(--primary-text-color);
+            font-family: roboto;
+            font-size: rem(15px);
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+
+        }
     }
 }

@@ -4,20 +4,34 @@ import { storageService } from './storage.service.js'
 export const userService = {
     getUser,
     loginSignup,
+    logout,
     transferFunds,
-    getTransactions
 }
 
 function getUser() {
     return storageService.load('loggedinUser' || {})
 }
 
-function transferFunds() {
+function transferFunds(amount, contact) {
+    const user = getUser()
+    user.balance -= amount
 
-}
+    const transaction = {
+        id: utilService.makeId(),
+        toId: contact._id,
+        to: contact.name,
+        at: Date.now(),
+        amount
+    }
 
-function getTransactions() {
+    user.transactions.unshift(transaction)
+    storageService.save('loggedinUser', user)
 
+    const userId = user._id
+    const users = storageService.load('user')
+    const userIdx = users.findIndex(user => user._id === userId)
+    users[userIdx] = {...user}
+    storageService.save('user', users)
 }
 
 function loginSignup(username) {
@@ -34,18 +48,15 @@ function loginSignup(username) {
         _id: utilService.makeId(),
         name: username,
         balance: 100,
-        transactions: [
-            {
-                id: utilService.makeId(),
-                toId: "7Qhlcosi6k",
-                to: "Roni Cohen",
-                at: Date.now(),
-                amount: 10
-            }]
+        transactions: []
     }
 
     users.push(user)
     storageService.save('loggedinUser', user)
     storageService.save('user', users)
     return user
+}
+
+function logout() {
+    storageService.save('loggedinUser', null)
 }

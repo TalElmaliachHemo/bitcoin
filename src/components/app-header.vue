@@ -8,13 +8,18 @@
       <RouterLink to="/contact">Contacts</RouterLink>
       <RouterLink to="/statistic">Statistics</RouterLink>
       <span class="separator">|</span>
-      <RouterLink to="/login-signup">Login</RouterLink>
+      <button class="btn-logout" @click="logout">Logout</button>
     </nav>
   </header>
 </template>
 
 <script>
 export default {
+  methods: {
+    logout() {
+      this.$store.dispatch('logout')
+    }
+  },
   computed: {
     isLoginSignupPath() {
       return this.$route.path === '/login-signup'
