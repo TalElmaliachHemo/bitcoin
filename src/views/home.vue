@@ -1,6 +1,6 @@
 <template>
   <section class="home main-layout">
-    <h1 class="title">Hello You !! {{ user.name }}, Welcome !</h1>
+    <h1 class="title">Hello {{ user.name }}, Welcome !</h1>
     <main class="data">
       <div class="balance">
         <span class="btc">{{ user.name }}'s balance: ₿{{ user.balance }}</span>
