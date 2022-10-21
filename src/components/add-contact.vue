@@ -1,6 +1,6 @@
 <template>
   <section class="add-contact">
-    <h1 class="title">Add a new contact</h1>
+    <h1 class="title">Add more friends to your contact list!</h1>
     <form class="add-contact-form" @submit.prevent>
       <input
         class="contact-name"

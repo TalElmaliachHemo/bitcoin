@@ -3,6 +3,8 @@
     flex-direction: column;
 
     .title {
+        font-size: rem(25px);
+        width: rem(430px);
         margin-block-end: rem(30px);
     }
 
@@ -11,10 +13,10 @@
         flex-direction: column;
 
         >* {
-            width: rem(400px);
+            width: rem(430px);
 
             &:not(:last-child) {
-                padding: rem(3px);
+                padding: rem(7px);
                 border-radius: rem(4px);
                 margin-block-end: rem(20px);
             }
