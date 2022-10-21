@@ -6,6 +6,10 @@
         font-size: rem(25px);
         width: rem(430px);
         margin-block-end: rem(30px);
+
+        span {
+            color: var(--secondary-text-color);
+        }
     }
 
     .add-contact-form {
@@ -14,12 +18,20 @@
 
         >* {
             width: rem(430px);
+            padding: rem(7px);
 
             &:not(:last-child) {
-                padding: rem(7px);
                 border-radius: rem(4px);
                 margin-block-end: rem(20px);
             }
+        }
+
+        .btn-add {
+            background-color: transparent;
+            color: var(--primary-text-color);
+            border-color: var(--primary-text-color);
+            font-family: roboto;
+            font-size: rem(16px);
         }
     }
 }

@@ -4,6 +4,7 @@
       <span>Filter</span>
       your contacts by name and start to
       <span> send BTC</span>
+      easily
     </h1>
     <input
       class="filterBy-input"

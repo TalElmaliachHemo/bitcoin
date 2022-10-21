@@ -1,7 +1,8 @@
 <template>
   <section class="transfer-funds">
-    <input v-model="amount" type="number" />
-    <button class="btn-transfer" @click="onTransferFunds">Transfer !</button>
+    <input class="transfer-input" v-model="amount" type="number" />
+    <span>BTC</span>
+    <button class="btn-transfer" @click="onTransferFunds">Transfer</button>
   </section>
 </template>
 
@@ -15,7 +16,7 @@ export default {
   },
   data() {
     return {
-      amount: "",
+      amount: 0,
     };
   },
   methods: {
@@ -25,7 +26,7 @@ export default {
         amount: this.amount,
         contact: this.contact,
       });
-        this.amount = "";
+        this.amount = 0;
     },
   },
 };
