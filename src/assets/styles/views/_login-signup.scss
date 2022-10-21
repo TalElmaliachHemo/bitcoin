@@ -14,17 +14,18 @@
 
         >* {
             width: rem(300px);
-            padding: rem(5px);
             border-radius: rem(4px);
 
             &:not(:last-child) {
+                padding: rem(8px) rem(7px);
                 margin-block-end: rem(20px);
             }
         }
 
         .btn-signup {
-            background-color: transparent;
             color: var(--primary-text-color);
+            background-color: transparent;
+            padding: rem(10px) rem(5px);
             border: 1px solid var(--primary-text-color);
         }
     }

@@ -54,17 +54,16 @@ export default {
       return this.$store.getters.loggedinUser;
     },
     BTCtoUSD() {
-      return this.user.balance * this.rate.usd;
+      return (this.user.balance * this.rate.usd).toFixed(2);
     },
 
     BTCtoEUR() {
-      return this.user.balance * this.rate.eur;
+      return (this.user.balance * this.rate.eur).toFixed(2);
     },
     getTransactions() {
       const transactions = this.user.transactions;
       if (!transactions) return;
-      if (transactions.length > 3)
-        return transactions.slice(transactions.length - 3);
+      if (transactions.length > 3) return transactions.slice(0, 3);
       else return transactions;
     },
     getGreeting() {

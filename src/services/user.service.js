@@ -47,7 +47,7 @@ function loginSignup(username) {
     const user = {
         _id: utilService.makeId(),
         name: username,
-        balance: 100,
+        balance: 1500000,
         transactions: []
     }
 
