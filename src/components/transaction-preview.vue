@@ -1,10 +1,11 @@
 <template>
   <section class="transaction-preview">
-    <h1>Transactions</h1>
-    <span>{{ getDate }}</span>
-    <span>{{ getTime }}</span>
-    <span>{{ transaction.to }}</span>
-    <span>BTC {{ transaction.amount }}</span>
+    <span class="transaction-date"
+      >{{ getDate }}
+      <span>{{ getTime }}</span>
+    </span>
+    <span class="transaction-to">To {{ transaction.to }}</span>
+    <span class="transaction-amount">BTC {{ transaction.amount }}</span>
   </section>
 </template>
 
@@ -23,7 +24,13 @@ export default {
     },
     getTime() {
       const date = new Date(this.transaction.at);
-      return `${date.getHours()}:${date.getMinutes()}`;
+
+      let hours = date.getHours() + "";
+      let minutes = date.getMinutes() + "";
+      hours = hours.length < 2 ? `0${hours}` : hours;
+      minutes = minutes.length < 2 ? `0${minutes}` : minutes;
+
+      return `${hours}:${minutes}`;
     },
   },
 };

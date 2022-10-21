@@ -1,0 +1,29 @@
+.transaction-preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: rem(5px);
+    height: rem(60px);
+    width: rem(450px);
+    border-block-end: 1px solid;
+    margin-block-end: rem(15px);
+
+    .transaction-date {
+        position: absolute;
+        top: 0;
+        right: 0;
+
+        span {
+            margin-inline-start: rem(5px);
+        }
+    }
+
+    .transaction-to {
+        font-size: rem(20px);
+    }
+
+    .transaction-amount {
+        color: var(--secondary-text-color);
+    }
+}

@@ -9,7 +9,7 @@
     }
 
     .secondary-title {
-        font-size: rem(20px);
+        font-size: rem(23px);
         margin-block-end: rem(40px);
 
         span {
@@ -29,7 +29,7 @@
         .balance {
             display: flex;
             flex-direction: column;
-            margin-block-end: rem(50px);
+            margin-block-end: rem(40px);
 
             .btc {
                 font-size: rem(18px);
@@ -47,7 +47,7 @@
             }
 
             >*:not(:last-child) {
-                margin-block-end: rem(5px);
+                margin-block-end: rem(8px);
             }
         }
     }
