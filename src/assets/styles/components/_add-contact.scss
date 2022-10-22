@@ -7,11 +7,11 @@
     }
 
     .title {
-        font-size: rem(30px);
-        margin-block-end: rem(30px);
+        font-size: rem(24px);
+        margin-block-end: rem(20px);
 
         @include for-normal-layout {
-            width: rem(400px);
+            width: rem(370px);
         }
 
         @include for-wide-layout {
