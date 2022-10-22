@@ -3,11 +3,18 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    padding: rem(5px);
-    height: rem(60px);
-    width: rem(450px);
+    height: rem(55px);
+    width: rem(300px);
     border-block-end: 1px solid;
     margin-block-end: rem(15px);
+
+    @include for-narrow-layout {
+        width: rem(470px);
+    }
+
+    @include for-wide-layout {
+        width: rem(410px);
+    }
 
     .transaction-date {
         position: absolute;

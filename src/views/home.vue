@@ -7,7 +7,7 @@
       with Mr. BitCoin free and secure BTC app
     </h4>
     <main class="data">
-      <div class="flex column">
+      <div class="funds">
         <div class="balance">
           <span class="btc"
             >{{ user.name }}'s balance:
@@ -27,7 +27,7 @@
           :transactions="getTransactions"
         />
       </div>
-      <MarketPriceHistory />
+      <MarketPriceHistory class="market-place-history" />
     </main>
   </section>
 </template>
