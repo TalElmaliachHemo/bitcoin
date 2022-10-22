@@ -4,6 +4,7 @@
     <form class="login-signup-form" @submit.prevent="loginSignup">
       <input
         class="username"
+        ref="input"
         v-model="username"
         placeholder="Enter your fullname"
         type="text"
@@ -19,6 +20,9 @@ export default {
     return {
       username: "",
     };
+  },
+  mounted() {
+    this.$refs.input.focus()
   },
   methods: {
     loginSignup() {
