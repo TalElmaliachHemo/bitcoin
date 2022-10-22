@@ -5,11 +5,30 @@
     padding: rem(25px) 0;
     margin-block-end: rem(30px);
 
+    &.menu-opened .toggle-menu {
+        display: none;
+    }
+
+    &.menu-opened .nav-app {
+        box-shadow: -6px 0 17px rgb(0 0 0 / 26%);
+        transform: translateX(0);
+    }
+
+    &.menu-opened .btn-close-menu {
+        display: unset;
+        background-color: transparent;
+        color: var(--primary-text-color);
+        border: 0;
+        font-size: rem(17px);
+        cursor: pointer;
+        z-index: 5;
+    }
+
     @keyframes logo {
         from {
             color: var(--primary-text-color);
         }
-    
+
         to {
             color: var(--secondary-text-color);
         }
@@ -26,6 +45,23 @@
     .nav-app {
         font-size: rem(15px);
 
+        @include for-mobile-layout {
+            position: fixed;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 100vw;
+            color: var(--primary-text-color);
+            background-color: var(--primary-bgc);
+            transition: transform .6s, box-shadow .6s;
+            transform: translateX(100%);
+            z-index: 5;
+        }
+
         >*:not(:last-child) {
             margin-inline-end: rem(10px);
         }
@@ -33,6 +69,14 @@
         .router-link-active {
             color: var(--secondary-text-color);
             font-size: rem(17px);
+        }
+
+        .separator {
+            display: none;
+
+            @include for-narrow-layout {
+                display: unset;
+            }
         }
 
         .btn-logout {
@@ -45,5 +89,21 @@
             cursor: pointer;
 
         }
+    }
+
+    .toggle-menu {
+        background-color: transparent;
+        color: var(--primary-text-color);
+        border: 0;
+        font-size: rem(17px);
+        cursor: pointer;
+
+        @include for-narrow-layout {
+            display: none;
+        }
+    }
+
+    .btn-close-menu {
+        display: none;
     }
 }
