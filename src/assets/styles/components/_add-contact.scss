@@ -1,11 +1,22 @@
 .add-contact {
-    display: flex;
-    flex-direction: column;
+    display: none;
+
+    @include for-normal-layout {
+        display: flex;
+        flex-direction: column;
+    }
 
     .title {
-        font-size: rem(25px);
-        width: rem(430px);
+        font-size: rem(30px);
         margin-block-end: rem(30px);
+
+        @include for-normal-layout {
+            width: rem(400px);
+        }
+
+        @include for-wide-layout {
+            width: rem(430px);
+        }
 
         span {
             color: var(--secondary-text-color);
@@ -17,12 +28,19 @@
         flex-direction: column;
 
         >* {
-            width: rem(430px);
             padding: rem(7px);
 
             &:not(:last-child) {
                 border-radius: rem(4px);
                 margin-block-end: rem(20px);
+            }
+
+            @include for-normal-layout {
+                width: rem(370px);
+            }
+
+            @include for-wide-layout {
+                width: rem(430px);
             }
         }
 

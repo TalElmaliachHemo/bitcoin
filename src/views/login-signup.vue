@@ -5,7 +5,7 @@
       <input
         class="username"
         v-model="username"
-        placeholder="fullname"
+        placeholder="Enter your fullname"
         type="text"
       />
       <button class="btn-signup" @click="loginSignup">Signup</button>

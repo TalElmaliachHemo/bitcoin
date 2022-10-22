@@ -3,7 +3,15 @@
     align-items: center;
     margin-block-end: rem(5px);
     cursor: pointer;
-    width: rem(350px);
+    width: 100%;
+
+    @include for-narrow-layout {
+        width: rem(420px);
+    }
+
+    @include for-normal-layout {
+        width: rem(350px);
+    }
 
     img {
         height: rem(50px);

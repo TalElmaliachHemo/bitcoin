@@ -1,12 +1,31 @@
 .contact-filter {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    margin-block-end: rem(110px);
+    margin-block-end: rem(50px);  
+
+    @include for-normal-layout {
+        justify-content: flex-start;
+        margin: 0;
+    }
 
     .filterBy-title {
         font-size: rem(30px);
-        width: rem(430px);
+        text-align: center;
+        width: 100%;
+
+        @include for-narrow-layout {
+            width: rem(420px);
+        }
+
+        @include for-normal-layout {
+            font-size: rem(30px);
+            width: rem(400px);
+            text-align: unset;
+        }
+
+        @include for-wide-layout {
+            width: rem(430px);
+        }
 
         span {
             color: var(--secondary-text-color);
@@ -14,10 +33,22 @@
     }
 
     .filterBy-input {
-        width: rem(430px);
         padding: rem(7px);
         border-radius: rem(4px);
         font-size: rem(14px);
+        width: 100%;
+
+        @include for-narrow-layout {
+            width: rem(420px);
+        }
+
+        @include for-normal-layout {
+            width: rem(370px);
+        }
+
+        @include for-wide-layout {
+            width: rem(430px);
+        }
     }
 
     >*:not(:last-child) {

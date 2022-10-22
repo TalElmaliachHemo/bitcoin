@@ -1,7 +1,37 @@
 .contact-list {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     flex-grow: 1;
+
+    @include for-narrow-layout {
+        justify-content: flex-start;
+        padding-inline-end: rem(17px);
+        overflow: auto;
+
+        // scrollbar
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: rem(5px);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: var(--secondary-text-color);
+            border-radius: rem(5px);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: rgba(6, 89, 116, 0.575);
+            border-radius: rem(5px);
+        }
+    }
+
+    @include for-normal-layout {
+        justify-content: flex-end;
+    }
 
     ul {
         li {
