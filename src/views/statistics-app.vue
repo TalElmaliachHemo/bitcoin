@@ -1,5 +1,5 @@
 <template>
-  <section class="statistics-app">
+  <section class="statistics-app main-layout">
     <MarketPriceHistory />
     <AvgBlockSize />
   </section>

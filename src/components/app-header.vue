@@ -1,5 +1,5 @@
 <template>
-  <header class="app-header">
+  <header class="app-header main-layout">
     <span class="logo">
       <RouterLink to="/"> Mr. BitCoin </RouterLink>
     </span>
