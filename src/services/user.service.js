@@ -9,7 +9,7 @@ export const userService = {
 }
 
 function getUser() {
-    return storageService.load('loggedinUser' || {})
+    return storageService.load('loggedinUser') || {}
 }
 
 function transferFunds(amount, contact) {
@@ -30,7 +30,7 @@ function transferFunds(amount, contact) {
     const userId = user._id
     const users = storageService.load('user')
     const userIdx = users.findIndex(user => user._id === userId)
-    users[userIdx] = {...user}
+    users[userIdx] = { ...user }
     storageService.save('user', users)
 }
 
@@ -47,7 +47,7 @@ function loginSignup(username) {
     const user = {
         _id: utilService.makeId(),
         name: username,
-        balance: 1500000,
+        balance: 100,
         transactions: []
     }
 

@@ -27,7 +27,7 @@
           :transactions="getTransactions"
         />
       </div>
-      <MarketPriceHistory class="market-place-history" />
+      <MarketPriceHistory class="market-price-history" />
     </main>
   </section>
 </template>
@@ -44,7 +44,6 @@ export default {
   },
   async created() {
     if (!this.user) {
-      console.log("user");
       this.$router.push("/login-signup");
     }
     this.rate = await bitcoinService.getRate();
